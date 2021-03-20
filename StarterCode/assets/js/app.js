@@ -82,19 +82,16 @@ d3.csv("assets/data/data.csv").then(function(stateData) {
     .attr("fill", "blue")
     .attr("opacity", ".5");
 
-    // chartGroup.append("text")
-    // .attr("cx", d => xLinearScale(d.poverty))
-    // .attr("cy", d => yLinearScale(d.healthcare))
-    // .text(d => (d.abbr));
+  
 
     var circleLabels = chartGroup.selectAll(null).data(stateData).enter().append("text")
 
     
-      .attr("x", function(d) { return d.poverty; })
-      .attr("y", function(d) { return d.healthcare; })
+      .attr("x", function(d) { return xLinearScale(d.poverty); })
+      .attr("y", function(d) { return yLinearScale(d.healthcare); })
       .text(function(d) { return d.abbr; })
       .attr("font-family", "sans-serif")
-      .attr("font-size", "5px")
+      .attr("font-size", "6.5px")
       .attr("fill", "white");
 
     // Step 6: Initialize tool tip
