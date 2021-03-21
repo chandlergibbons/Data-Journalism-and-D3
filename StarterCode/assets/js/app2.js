@@ -140,7 +140,7 @@ function updateToolTip(chosenXAxis, chosenXAxis, circlesGroup) {
 // Import Data
 d3.csv("assets/data/data.csv").then(function(stateData, err) {
 
-  if (err) throw err;
+//   if (err) throw err;
 
     console.log(stateData);
 
@@ -185,6 +185,7 @@ d3.csv("assets/data/data.csv").then(function(stateData, err) {
     var yAxis = chartGroup.append("g")
     .classed("y-axis", true)
     .attr("transform", `translate(0, ${height})`)
+    .attr("transform", "rotate(-90)")
     .call(leftAxis);
 
     // Step 5: Create Circles
@@ -403,6 +404,6 @@ d3.csv("assets/data/data.csv").then(function(stateData, err) {
        }
      });
 
-  }).catch(function(error) {
-    console.log(error);
+//   }).catch(function(error) {
+//     console.log(error);
   });
