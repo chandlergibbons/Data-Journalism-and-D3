@@ -1,2 +1,2 @@
-# D3-Challenge
+# D3 project
 D3 HW
